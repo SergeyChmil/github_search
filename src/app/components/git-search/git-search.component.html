@@ -1,0 +1,32 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01"
+          aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+
+    <form class="form-inline">
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle btn-sort" type="button" id="dropdownMenuButton2"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by:
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <a class="dropdown-item" (click)="onSortClick('name')">Project's name</a>
+          <a class="dropdown-item" (click)="onSortClick('forks_count')">Forks</a>
+          <a class="dropdown-item" (click)="onSortClick('watchers_count')">Watchers</a>
+        </div>
+      </div>
+
+      <input #inputField class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="onSearchClick(inputField.value)">Search
+      </button>
+    </form>
+  </div>
+</nav>
+
+<app-search-result-list [searchResult]="searchResult" [sortingType]="sortingType"></app-search-result-list>

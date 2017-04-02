@@ -1,0 +1,28 @@
+<div class="card  my-card justify-content-center">
+
+  <img class="card-img-top avatar" [src]="data.owner.avatar_url" alt="Avatar">
+  <h6 class="text-center owner-name">{{data.owner.login}}</h6>
+
+  <div class="card-block">
+    <h4 class="card-title">{{data.name}}</h4>
+    <p class="card-text">{{data.description}}</p>
+    <a [href]="data | projectLink" class="btn btn-primary">Go to the project</a>
+  </div>
+
+  <div class="card-footer my-footer">
+    <div class="row">
+      <div class="col-4">
+        <small class="text-muted">Watchers: {{data.watchers_count}}</small>
+      </div>
+      <div class="col-4">
+        <small class="text-muted">Stars: {{data.stargazers_count}}</small>
+      </div>
+      <div class="col-4">
+        <small class="text-muted">Forks: {{data.forks_count}}</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
